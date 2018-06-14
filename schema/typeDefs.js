@@ -1,6 +1,5 @@
-
 const typeDefs = `
-type PropertySource {
+type Source {
     id: ID!
     name: String!
     url: String!
@@ -102,6 +101,24 @@ type Query {
     Location(id: ID): Location
     Locations: [Location]
 
+}
+
+type Mutation {
+    CreateProperty(url: String!, title: String!, desc: String = null, imageURLs: [String] = null, streetAddress: String = null, price: Float = 0.0, numBedrooms: Int = 0, numBathrooms: Int = 0, size: String = null, unitOfMeasurement: String = null, numPlots: Int = 0, projectName: String = null, developer: String = null, unitName: String = null, floorArea: String = null, hasBalcony: Boolean = false, extraAmenities: String = null) : Property
+    
+    CreateSource: Source
+    CreatePropertyType: PropertyType
+    CreatePropertySource: Source
+    CreateAcquisitionType: AcquisitionType
+
+    AddPropertyAcquisitionType(propertyid: ID!, acqType: String!): Property
+    AddPropertySource(propertyid: ID!, source: ID!): Property
+    AddPropertyType(propertyid: ID!, typeid: ID!): Property
+    AddPropertyLocation(propertyid: ID!, locationid: ID!)
+
+    CreateUser: User
+
+    CreateLocation: Location
 }
 `
 
