@@ -1,3 +1,4 @@
+//TODO: is the likes relationship properly implemented between property and user? is there a better way to do it?
 
 const typeDefs = `
 type PropertySource {
