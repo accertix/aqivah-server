@@ -27,6 +27,7 @@ type Property {
     description: String
     imageURLs: [String]
     location: Location @relation(name: "LOCATED_AT", direction: "OUT")
+    lister: User!
     streetAddress: String
     price: Float
     numBedrooms: Int
@@ -60,6 +61,7 @@ type User {
     lastname: String
     phone: String!
     email: String
+    listed: [Property] @relation(name: "LISTED", direction: "OUT")
     likes(timestamp: String!): [Property] @relation(name: "LIKED", direction: "OUT")
     views(timestamp: String!): [Property] @relation(name: "VIEWED", direction: "OUT")
 }
