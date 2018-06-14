@@ -30,6 +30,11 @@ module.exports = {
     imageURLs: {
         //TODO: how to represent an array of strings here.
     },
+    lister: {
+        type: "relationship",
+        target: "User",
+        relationship: "LISTED_BY"
+    },
     location: {
         type: "relationship",
         target: "Location",
