@@ -97,7 +97,7 @@ type Location {
 
 
 type Query {
-    Property(id: ID): Property
+    Property(id: ID!): Property
     Properties(first: Int = 10, offset: Int = 0, limit: Int = 10) : [Property]
 
     User(id: ID): User
