@@ -62,6 +62,7 @@ type User {
     lastname: String
     phone: String!
     email: String
+    listed: Property
     likes(timestamp: String!): [Property] @relation(name: "LIKED", direction: "OUT")
     views(timestamp: String!): [Property] @relation(name: "VIEWED", direction: "OUT")
 }
