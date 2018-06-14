@@ -1,7 +1,7 @@
 const Neode = require("neode")
 
 const instance = new Neode.fromEnv()
-instance.withDirectory(__dirname + "/models")
+instance.withDirectory(__dirname + "/../models")
 
 const resolvers = {
 	Query: {

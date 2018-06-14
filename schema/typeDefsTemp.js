@@ -21,7 +21,7 @@ enum AcquisitionType {
 type Property {
     id: ID!
     url: String!
-    source: PropertySource 
+    source: Source 
     propertyType: PropertyType 
     acquisitionType: AcquisitionType
     title: String!
