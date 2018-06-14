@@ -1,5 +1,6 @@
 const { gql } = require('apollo-server')
 
+//TODO: change PropertyHistory.currentValue to newValue. reason: the newValue may have been changed again, and may not be the currentValue in the property
 const typeDefs = gql`
 type Source {
     id: ID!
