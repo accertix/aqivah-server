@@ -1,6 +1,6 @@
-const resolverMap = require("./schema/resolvers")
+const resolvers = require("./schema/resolvers")
 const typeDefs = require("./schema/typeDefsTemp")
-const neo4j = require("neo4j-driver").v1
+// const neo4j = require("neo4j-driver").v1
 const { ApolloServer } = require("apollo-server")
 
 // let driver
