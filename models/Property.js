@@ -1,11 +1,13 @@
 module.exports = {
     id: {
         primary: true,
-        type: 'uuid'
+        type: 'uuid',
+        required: true
     },
     url: {
         type: 'string',
-        unique: true
+        unique: true,
+        required: true
     },
     source: {
         type: "relationship",
@@ -21,6 +23,7 @@ module.exports = {
         direction: "out",
         eager: true
     },
+    //TODO: change this and all others like it (which have only one property in there) to the format: title: 'string',
     title: {
         type: 'string',
     },

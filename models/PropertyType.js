@@ -1,7 +1,8 @@
 module.exports = {
     id: {
         primary: true,
-        type: 'uuid'
+        type: 'uuid',
+        required: true
     },
     name: {
         type: "string",

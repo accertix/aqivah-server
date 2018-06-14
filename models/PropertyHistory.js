@@ -1,7 +1,8 @@
 module.exports = {
     id: {
         type: 'uuid',
-        primary: true
+        primary: true,
+        required: true
     },
     timestamp: {
         type: 'string' //TODO: is there a way to represent date-time in neode model?
