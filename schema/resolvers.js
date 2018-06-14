@@ -1,36 +1,47 @@
-const Neode = require('neode')
+const Neode = require("neode")
 
 const instance = new Neode.fromEnv()
-instance.withDirectory(__dirname+'/models')
-
-
+instance.withDirectory(__dirname + "/models")
 
 const resolvers = {
-    Query: {
-        Property(obj, params, ctx, resolveInfo){
-            return 
+	Query: {
+		Properties: (first, offset, limit) => {
+			return instance.all("Property").then(results => {
+				console.log(results)
+				return results
+			})
         },
-
-        Properties(obj, params, ctx, resolveInfo){
-            return 
+        Property: (id) => {
+            return instance.findById('Property', id).then((property) => {
+                console.log(property)
+                return property
+            })
         },
-
-        Users(obj, params, ctx, resolveInfo){
-            return 
+        User: (id) => {
+            return instance.findById('User', id).then((user) => {
+                console.log(user)
+                return user
+            })
         },
-
-        User(obj, params, ctx, resolveInfo){
-            return 
+        Users: () => {
+            return instance.all('User').then((users) => {
+                console.log(users)
+                return users
+            })
         },
-
-        Location(obj, params, ctx, resolveInfo){
-            return 
+        Location: (id) => {
+            return instance.findById('Location', id).then((location) => {
+                console.log(location)
+                return location
+            })
         },
-
-        Locations(obj, params, ctx, resolveInfo){
-            return 
+        Locations: () => {
+            return instance.all('Location').then((locations) => {
+                console.log(locations)
+                return locations
+            })
         }
-    }
+	}
 }
 
 module.exports = resolvers
