@@ -1,3 +1,5 @@
+//TODO: are there any relationships that need properties/schema?
+
 module.exports = {
     id: {
         primary: true,
