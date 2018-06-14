@@ -21,13 +21,13 @@ enum AcquisitionType {
 type Property {
     id: ID!
     url: String!
-    source: PropertySource @relation(name: "SOURCED_FROM", direction: "OUT")
-    propertyType: PropertyType @relation(name: "IS_OF_TYPE", direction: "OUT")
+    source: PropertySource 
+    propertyType: PropertyType 
     acquisitionType: AcquisitionType
     title: String!
     description: String
     imageURLs: [String]
-    location: Location @relation(name: "LOCATED_AT", direction: "OUT")
+    location: Location
     streetAddress: String
     price: Float
     numBedrooms: Int
@@ -42,8 +42,8 @@ type Property {
     hasBalcony: Boolean
     extraAmenities: [String]
     lister: User!
-    likes: User @relation(name: "LIKED_BY", direction: "OUT")
-    history: [PropertyHistory] @relation(name: "USED_TO_BE", direction: "OUT")
+    likes: User
+    history: [PropertyHistory] 
 }
 
 type PropertyHistory {
@@ -63,8 +63,8 @@ type User {
     phone: String!
     email: String
     listed: Property
-    likes(timestamp: String!): [Property] @relation(name: "LIKED", direction: "OUT")
-    views(timestamp: String!): [Property] @relation(name: "VIEWED", direction: "OUT")
+    likes(timestamp: String!): [Property]
+    views(timestamp: String!): [Property]
 }
 
 
@@ -98,7 +98,7 @@ type Location {
 
 type Query {
     Property(id: ID): Property
-    Properties(first: Int = 10, offset: Int = 0, limit: Int = 10) : [Property] @cypher(statement: "MATCH (p: Property) RETURN p LIMIT {limit}")
+    Properties(first: Int = 10, offset: Int = 0, limit: Int = 10) : [Property]
 
     User(id: ID): User
     Users: [User]
