@@ -40,6 +40,7 @@ type Property {
     floorArea: String
     hasBalcony: Boolean
     extraAmenities: [String]
+    lister: User!
     likes: User @relation(name: "LIKED_BY", direction: "OUT")
     history: [PropertyHistory] @relation(name: "USED_TO_BE", direction: "OUT")
 }
