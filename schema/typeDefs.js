@@ -27,7 +27,7 @@ type Property {
     description: String
     imageURLs: [String]
     location: Location @relation(name: "LOCATED_AT", direction: "OUT")
-    lister: User!
+    lister: User! @relation(name: "LISTED_BY", direction: "OUT")
     streetAddress: String
     price: Float
     numBedrooms: Int
