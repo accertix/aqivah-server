@@ -29,6 +29,7 @@ module.exports = {
     },
     imageURLs: {
         //TODO: how to represent an array of strings here.
+        type: "string"
     },
     lister: {
         type: "relationship",
@@ -46,7 +47,7 @@ module.exports = {
         type: "string"
     },
     price: {
-        type: "float" //TODO: verify if this is correct
+        type: "float" //TODO: verify if this and all other floats are correct
     },
     numBedrooms: {
         type: "int"
@@ -76,10 +77,17 @@ module.exports = {
         type: "float" //TODO: HERE..
     },
     hasBalcony: {
-        type: "boolealn"
+        type: "boolean"
     },
     extraAmenities: {
         //TODO: define array of strings.
+        type: "string"
     },
+    history: {
+        type: "relationship",
+        target: "PropertyHistory",
+        direction: "out",
+        relationship: "USED_TO_BE"
+    }
     
 }
