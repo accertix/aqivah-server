@@ -17,6 +17,13 @@ module.exports = {
         type: 'string',
         unique: true
     },
+    listed: {
+        type: "relationship",
+        target: "Property",
+        direction: "OUT",
+        relationship: "LISTED",
+        eager: true
+    },
     likes: {
         type: "relationship",
         relationship: 'LIKED',
