@@ -34,7 +34,9 @@ module.exports = {
     lister: {
         type: "relationship",
         target: "User",
-        relationship: "LISTED_BY"
+        relationship: "LISTED_BY",
+        direction: 'OUT',
+        eager: true
     },
     location: {
         type: "relationship",
