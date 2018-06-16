@@ -12,7 +12,7 @@ instance.withDirectory(__dirname + "/../models")
 
 const resolvers = {
 	Query: {
-		Properties: (first, offset, limit) => {
+		Properties: (_, args) => {
 			return instance.all("Property").then(results => {
 				console.log(results._values)
 				const properties = results._values.map(each => {
@@ -23,7 +23,6 @@ const resolvers = {
 			})
 		},
 		Property: (_, args) => {
-			console.log(args.id)
 			return instance
 				.cypher("MATCH (p: Property) WHERE p.id = {id} RETURN p", {
 					id: args.id,
@@ -49,8 +48,8 @@ const resolvers = {
 				return users
 			})
 		},
-		Location: (_, id) => {
-			return instance.findById("Location", id).then(location => {
+		Location: (_, args) => {
+			return instance.findById("Location", args.id).then(location => {
 				console.log(location)
 				return location
 			})
