@@ -37,8 +37,8 @@ const resolvers = {
 					return prop[0]
 				})
 		},
-		User: id => {
-			return instance.findById("User", id).then(user => {
+		User: (_, args) => {
+			return instance.find("User", args.id).then(user => {
 				console.log(user)
 				return user
 			})
@@ -49,7 +49,7 @@ const resolvers = {
 				return users
 			})
 		},
-		Location: id => {
+		Location: (_, id) => {
 			return instance.findById("Location", id).then(location => {
 				console.log(location)
 				return location
