@@ -1,8 +1,12 @@
-const Neode = require("neode")
+// const Neode = require("neode")
 //TODO: find out if JS array destructuring can help with easily returning accurate values
 
-const instance = new Neode.fromEnv()
-instance.withDirectory(__dirname + "/../models")
+const neo4j = require('neo4j-driver').v1
+const driver = neo4j.driver()
+// const instance = new Neode.fromEnv()
+// instance.withDirectory(__dirname + "/../models")
+
+
 
 const resolvers = {
 	Query: {
