@@ -17,15 +17,17 @@ const resolvers = {
 			})
 		},
 		Property: $id => {
-            console.log($id)
+			console.log($id)
 			return instance
-				.cypher("MATCH (p: Property) RETURN p")
+				.cypher("MATCH (p: Property) WHERE p.id = {id} RETURN p", {
+					id: id,
+				})
 				.then(result => {
-					const prop = result.records.map((each) => {
-                        return (each._fields[0].properties)
-                    })
-                    console.log(prop)
-                    return prop[1]
+					const prop = result.records.map(each => {
+						return each._fields[0].properties
+					})
+					console.log(prop)
+					return prop[1]
 				})
 		},
 		User: id => {
