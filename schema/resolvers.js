@@ -1,4 +1,6 @@
 const Neode = require("neode")
+const _ = require("lodash")
+const mutationResolvers = require("./mutationResolvers")
 //TODO: find out if JS array destructuring can help with easily returning accurate values
 //TODO: figure out future of all commented out code.
 // require("dotenv").config()
@@ -61,6 +63,37 @@ const resolvers = {
 			})
 		},
 	},
+
+	Mutation: {
+		CreateProperty: (_, args) => {
+			console.log("in starting instance")
+			return instance
+				.create("Property", {
+					url: args.url,
+					title: args.title,
+					description: args.desc,
+					imageURLs: args.imageURLs,
+					streetAddress: args.streetAddress,
+					price: args.price,
+					numBedrooms: args.numBedrooms,
+					numBathrooms: args.numBathrooms,
+					size: args.size,
+					unitOfMeasurement: args.unitOfMeasurement,
+					numPlots: args.numPlots,
+					projectName: args.projectName,
+					developer: args.developer,
+					unitName: args.unitName,
+					floorArea: args.floorArea,
+					hasBalcony: args.hasBalcony,
+					extraAmenities: args.extraAmenities,
+				})
+				.then(property => {
+					console.log("in the mutation")
+					console.log(property)
+				})
+		},
+	},
 }
+// const resolvers = _.merge(queryResolvers, mutationResolvers)
 
 module.exports = resolvers
