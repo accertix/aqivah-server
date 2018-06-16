@@ -107,6 +107,11 @@ type Query {
     Locations: [Location]
 
 }
+
+
+type Mutation {
+    CreateProperty(url: String!, title: String!, desc: String = null, imageURLs: [String] = null, streetAddress: String = null, price: Float = 0.0, numBedrooms: Int = 0, numBathrooms: Int = 0, size: String = null, unitOfMeasurement: String = null, numPlots: Int = 0, projectName: String = null, developer: String = null, unitName: String = null, floorArea: String = null, hasBalcony: Boolean = false, extraAmenities: [String] = null) : Property
+}
 `
 
 module.exports = typeDefsTemp
