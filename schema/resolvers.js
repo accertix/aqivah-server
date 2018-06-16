@@ -22,18 +22,19 @@ const resolvers = {
 				return properties
 			})
 		},
-		Property: (_, $id) => {
-			console.log($id)
+		Property: (_, args) => {
+			console.log(args.id)
 			return instance
 				.cypher("MATCH (p: Property) WHERE p.id = {id} RETURN p", {
-					id: id,
+					id: args.id,
 				})
 				.then(result => {
+					console.log(result)
 					const prop = result.records.map(each => {
 						return each._fields[0].properties
 					})
-					console.log(prop)
-					return prop[1]
+					console.log(prop[0])
+					return prop[0]
 				})
 		},
 		User: id => {
