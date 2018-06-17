@@ -11,7 +11,7 @@ const queryResolvers = require('./queryResolvers')
 // 	neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASS)
 // )
 const instance = new Neode.fromEnv()
-instance.withDirectory(__dirname + "/../models") //TODO: is this necessary?
+instance.withDirectory(__dirname + "/../models") //TODO: is this necessary? or is it possible to declare fromEnv and withDir on same line as Neode instantiation?
 
 const resolvers = _.merge(queryResolvers, mutationResolvers)
 
