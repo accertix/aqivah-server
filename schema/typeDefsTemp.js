@@ -110,7 +110,7 @@ type Query {
 
 
 type Mutation {
-    CreateProperty(url: String!, title: String!, desc: String = null, imageURLs: [String] = null, streetAddress: String = null, price: Float = 0.0, numBedrooms: Int = 0, numBathrooms: Int = 0, size: String = null, unitOfMeasurement: String = null, numPlots: Int = 0, projectName: String = null, developer: String = null, unitName: String = null, floorArea: String = null, hasBalcony: Boolean = false, extraAmenities: [String] = null) : Property
+    CreateProperty(url: String!, title: String!, desc: String, imageURLs: [String], streetAddress: String, price: Float = 0.0, numBedrooms: Int = 0, numBathrooms: Int = 0, size: String, unitOfMeasurement: String, numPlots: Int = 0, projectName: String, developer: String, unitName: String, floorArea: String, hasBalcony: Boolean = false, extraAmenities: [String]) : Property
 }
 `
 
