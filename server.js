@@ -3,7 +3,7 @@ const typeDefs = require("./schema/typeDefsTemp")
 // const neo4j = require("neo4j-driver").v1
 const { ApolloServer } = require("apollo-server")
 
-//TODO: remove if not in se by July
+//TODO: remove if not in use by July
 // let driver
 
 // const context = (headers, secrets) => {
