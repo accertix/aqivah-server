@@ -29,7 +29,7 @@ type Property {
     imageURLs: [String]
     location: Location
     streetAddress: String
-    price: Float
+    price: String
     numBedrooms: Int
     numBathrooms: Int
     size: String
@@ -42,7 +42,7 @@ type Property {
     hasBalcony: Boolean
     extraAmenities: [String]
     lister: User!
-    likes: User
+    likedBy: User
     history: [PropertyHistory] 
 }
 
@@ -110,7 +110,7 @@ type Query {
 
 
 type Mutation {
-    CreateProperty(url: String!, title: String!, desc: String, imageURLs: [String], streetAddress: String, price: Float = 0.0, numBedrooms: Int = 0, numBathrooms: Int = 0, size: String, unitOfMeasurement: String, numPlots: Int = 0, projectName: String, developer: String, unitName: String, floorArea: String, hasBalcony: Boolean = false, extraAmenities: [String]) : Property
+    CreateProperty(url: String!, title: String!, desc: String, imageURLs: [String], streetAddress: String, price: String, numBedrooms: Int = 0, numBathrooms: Int = 0, size: String, unitOfMeasurement: String, numPlots: Int = 0, projectName: String, developer: String, unitName: String, floorArea: String, hasBalcony: Boolean = false, extraAmenities: [String]) : Property
 }
 `
 
