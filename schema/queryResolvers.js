@@ -10,9 +10,9 @@ const queryResolvers = {
 	Query: {
 		Properties: (_, args) => {
 			return instance.all("Property").then(results => {
-				console.log(results._values)
+				// console.log(results._values)
 				const properties = results._values.map(each => {
-					console.log(each._node.properties)
+					// console.log(each._node.properties) //remove by July
 					return each._node.properties
 				})
 				return properties
@@ -24,11 +24,11 @@ const queryResolvers = {
 					id: args.id,
 				})
 				.then(result => {
-					console.log(result)
+					// console.log(result)
 					const prop = result.records.map(each => {
 						return each._fields[0].properties
 					})
-					console.log(prop[0])
+					// console.log(prop[0])
 					return prop[0]
 				})
 		},
