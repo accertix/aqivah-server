@@ -24,6 +24,7 @@
     "neode": "^0.1.13"
   },
   "devDependencies": {
+    "casual": "^1.5.19",
     "nodemon": "^1.17.5"
   }
 }

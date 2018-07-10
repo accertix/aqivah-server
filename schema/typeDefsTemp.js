@@ -51,7 +51,7 @@ type PropertyHistory {
     timestamp: String
     fieldChanged: String!
     oldValue: String
-    currentValue: String!
+    newValue: String!
 }
 
 #listers found in web scrapings are made to be users too.
