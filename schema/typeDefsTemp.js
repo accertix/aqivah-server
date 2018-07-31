@@ -63,8 +63,8 @@ type User {
     phone: String!
     email: String
     listed: Property
-    likes(timestamp: String!): [Property]
-    views(timestamp: String!): [Property]
+    likes(timestamp: String): [Property]
+    views(timestamp: String): [Property]
 }
 
 
@@ -99,6 +99,8 @@ type Location {
 type Query {
     Property(id: ID!): Property
     Properties(first: Int = 10, offset: Int = 0, limit: Int = 10) : [Property]
+    PropertiesSearch(acqType: String!, numBedrooms: Int, numBathrooms: Int, priceType: String, location: String, price: String, propertyType: String!): [Property]
+
 
     User(id: ID): User
     Users: [User]
